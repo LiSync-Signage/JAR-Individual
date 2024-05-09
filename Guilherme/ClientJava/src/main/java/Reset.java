@@ -43,10 +43,9 @@ public class Reset {
             System.out.println("""
                     \n|----------- LOGIN -----------|
                     Insira suas informações
-                    Digite 0 para voltar ao MENU
                     """);
 
-            System.out.println("Digite seu e-mail: ");
+            System.out.println("Digite seu E-mail: ");
             String email = input.next();
             if (email.equals("0")) break;
 
@@ -70,6 +69,7 @@ public class Reset {
             }
         } while (!cadastroValido);
 
+        // Atualização dos dados do usuário autenticado;///
         servicosLisync.atualizarUsuario(usuarioAutenticado);
         servicosLisync.atualizarEmpresaDoUsuario(usuarioAutenticado.getFkEmpresa());
         List<Janela> janelas = looca.getGrupoDeJanelas().getJanelas();
@@ -79,14 +79,16 @@ public class Reset {
         for (Janela janela : janelas) {
             System.out.println(janela);
         }
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Insira o PID da janela que deseja fechar: ");
-            pidJanela = scanner.nextLong();
-            scanner.close();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Insira o PID da janela que deseja fechar: ");
+        pidJanela = scanner.nextLong();
+        scanner.close();
 
         fecharJanelaPorPID(pidJanela);
     }
 
+
+    // Método para fechar uma janela com base no PID fornecido
     public static void fecharJanelaPorPID(long pid) {
         Looca looca = new Looca();
         List<Janela> janelas = looca.getGrupoDeJanelas().getJanelas();
@@ -101,9 +103,10 @@ public class Reset {
         System.out.println("Não foi encontrada uma janela com o PID especificado.");
     }
 
+    // Método privado para encerrar o processo associado ao PID
     private static void encerrarProcesso(long janelaId) {
         try {
-            Runtime.getRuntime().exec("kill -9 " + janelaId);
+            Runtime.getRuntime().exec("taskkill /IM " + janelaId + " /F");
             // Runtime.getRuntime().exec("kill " + janelaId);
             System.out.println("Janela fechada com sucesso.");
         } catch (Exception e) {
