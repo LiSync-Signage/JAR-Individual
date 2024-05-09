@@ -73,7 +73,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>Main</mainClass>
+                            <mainClass>Mainsla</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
