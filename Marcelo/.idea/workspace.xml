@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="de09a780-263b-43a0-aa15-bbae35a58751" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/.idea/artifacts/Client_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/assets/Logo-LiSync.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/assets/Logo-Padrão.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/out/artifacts/Client_jar/Client.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/recursos/derLisync.mwb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/recursos/derLisync.mwb.bak" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/recursos/derLisyncNew.mwb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/recursos/derLisyncNew.mwb.bak" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/recursos/lisyncDB.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/recursos/lisyncDBNew.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/recursos/scriptClient.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/JanelasMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/MainTeste.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/conexao/ConexaoMySQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/dao/AmbienteDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/dao/ComandoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/dao/ComponenteDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/dao/EmpresaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/dao/JanelaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/dao/LogComponenteDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/dao/ProcessoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/dao/TelevisaoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/dao/UsuarioDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/models/Ambiente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/models/Comando.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/models/Componente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/models/Empresa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/models/Janela.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/models/LogComponente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/models/Monitoramento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/models/Processo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/models/Televisao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/models/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/services/Autenticacao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/services/RedeServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/src/main/java/services/ServicosLisync.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/Client-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/Client-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/JanelasMain.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/Main$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/Main$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/Main$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/Main$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/Main$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/Main$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/MainTeste$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/MainTeste.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/dao/AmbienteDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/dao/ComandoDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/dao/ComponenteDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/dao/EmpresaDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/dao/JanelaDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/dao/LogComponenteDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/dao/ProcessoDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/dao/TelevisaoDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/dao/UsuarioDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/models/Ambiente.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/models/Comando.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/models/Componente.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/models/Empresa.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/models/Janela.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/models/LogComponente.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/models/Monitoramento.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/models/Processo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/models/Televisao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/models/Usuario.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/org/LiSync/conexao/ConexaoMySQL.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/services/Autenticacao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/services/RedeServices.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/classes/services/ServicosLisync.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Marcelo 2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2fOc70WVIm8co49JboDtEiuVsgv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.JanelasMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainTeste.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TESTE.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Application.JanelasMain">
+    <configuration name="JanelasMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JanelasMain" />
+      <module name="Client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JanelasTamanho" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JanelasTamanho" />
+      <module name="Client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTeste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainTeste" />
+      <module name="Client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JanelasMain" />
+        <item itemvalue="Application.JanelasTamanho" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MainTeste" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="de09a780-263b-43a0-aa15-bbae35a58751" name="Changes" comment="" />
+      <created>1713675394529</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713675394529</updated>
+    </task>
+    <servers />
+  </component>
+</project>
