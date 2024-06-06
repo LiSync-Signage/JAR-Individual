@@ -102,7 +102,7 @@ if [[ $container_status == Up* ]]; then
 
     # Criar o usuário marcelo e conceder todos os privilégios a ele
     echo "Criando o usuário 'marcelo' e concedendo privilégios..."
-    sudo docker exec -i ContainerBD mysql -u root -p urubu100 -e "CREATE USER 'marcelo'@'%' IDENTIFIED BY 'urubu100'; ALTER USER 'marcelo' IDENTIFIED WITH mysql_native_password BY 'urubu100'; GRANT ALL PRIVILEGES ON *.* TO 'marcelo'@'%'; FLUSH PRIVILEGES;"
+    sudo docker exec -i ContainerBD mysql -u root -purubu100 -e "CREATE USER 'marcelo'@'%' IDENTIFIED BY 'urubu100'; ALTER USER 'marcelo' IDENTIFIED WITH mysql_native_password BY 'urubu100'; GRANT ALL PRIVILEGES ON *.* TO 'marcelo'@'%'; FLUSH PRIVILEGES;"
     if [ $? -eq 0 ]; then
         echo "Usuário 'marcelo' criado com sucesso e privilégios concedidos."
     else
@@ -112,7 +112,7 @@ if [[ $container_status == Up* ]]; then
 
     # Executar o script SQL "lisyncBD"
     echo "Executando o script SQL 'lisyncBD'..."
-    sudo docker exec -i ContainerBD sh -c 'mysql -u root -p urubu100 bancoLocal < /home/ubuntu/JAR-Individual/Marcelo/recursos/lisyncDBNew.sql'
+    sudo docker exec -i ContainerBD sh -c 'mysql -u root -purubu100 bancoLocal < /home/ubuntu/JAR-Individual/Marcelo/recursos/lisyncDBNew.sql'
     if [ $? -eq 0 ]; then
         echo "Script SQL 'lisyncBD' executado com sucesso."
     else
