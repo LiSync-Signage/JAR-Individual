@@ -87,7 +87,7 @@ public class Mainsla {
                 if (autenticado) {
                     UsuarioDAO usuarioDAO = new UsuarioDAO();
                     usuarioAutenticado = usuarioDAO.buscarCreedenciasUsuario(email, senha);
-                    JOptionPane.showMessageDialog(null, "Bem-vindo, " + usuarioAutenticado.getNome() + "!");
+                    JOptionPane.showMessageDialog(null, "Bem-vindo, " + usuarioAutenticado.getNomeUsuario()+ "!");
                     servicosLisync.atualizarEmpresaDoUsuario(usuarioAutenticado.getFkEmpresa());
                     servicosLisync.atualizarUsuario(usuarioAutenticado);
                     frame.dispose();

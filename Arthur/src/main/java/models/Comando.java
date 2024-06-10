@@ -2,15 +2,25 @@ package models;
 
 public class Comando {
     private Integer idComando;
-    private String comando;
+    private String nomeComando;
+    private String resposta;
     private Integer fkTelevisao;
 
     public Comando() {
 
     }
-    public Comando(String comando, Integer fkTelevisao) {
-        this.comando = comando;
+    public Comando(Integer idComando,String comando, String resposta, Integer fkTelevisao) {
+        this.idComando = idComando;
+        this.nomeComando = comando;
+        this.resposta = resposta;
         this.fkTelevisao = fkTelevisao;
+    }
+
+
+    public Comando(String comandoExecutado, String s, Integer fktelevisao) {
+        this.nomeComando = comandoExecutado;
+        this.resposta = s;
+        this.fkTelevisao = fktelevisao;
     }
 
 
@@ -22,12 +32,20 @@ public class Comando {
         this.idComando = idComando;
     }
 
-    public String getComando() {
-        return comando;
+    public String getnomeComando() {
+        return nomeComando;
     }
 
-    public void setComando(String comando) {
-        this.comando = comando;
+    public String getResposta() {
+        return resposta;
+    }
+
+    public void setResposta(String resposta) {
+        this.resposta = resposta;
+    }
+
+    public void setnomeComando(String comando) {
+        this.nomeComando = comando;
     }
 
     public Integer getFkTelevisao() {

@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 public class Processo {
     private Integer idProcesso;
     private Integer pid;
-    private String nomeProcesso;
+    private String nome;
     private Integer fkTelevisao;
     private LocalDateTime dataHora;
     private Integer idComponente;
@@ -13,11 +13,9 @@ public class Processo {
 
     public Processo() {}
 
-
-
-    public Processo(Integer pid, String nomeProcesso, Integer idComponente, Double valor) {
+    public Processo(Integer pid, String nome, Integer idComponente, Double valor) {
         this.pid = pid;
-        this.nomeProcesso = nomeProcesso;
+        this.nome = nome;
         this.idComponente = idComponente;
         this.dataHora = LocalDateTime.now();
         this.valor = valor;
@@ -56,11 +54,11 @@ public class Processo {
     }
 
     public String getNome() {
-        return nomeProcesso;
+        return nome;
     }
 
     public void setNome(String nome) {
-        this.nomeProcesso = nome;
+        this.nome = nome;
     }
 
     public Integer getFkTelevisao() {
@@ -84,7 +82,7 @@ public class Processo {
         return "Processo{" +
                 "idProcesso=" + idProcesso +
                 ", pid=" + pid +
-                ", nome='" + nomeProcesso + '\'' +
+                ", nome='" + nome + '\'' +
                 ", fkTelevisao=" + fkTelevisao +
                 ", dataHora=" + dataHora +
                 ", idComponente=" + idComponente +
