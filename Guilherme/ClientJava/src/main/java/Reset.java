@@ -1,57 +1,49 @@
-import java.util.List;
-import java.util.Scanner;
-import com.github.britooo.looca.api.group.janelas.Janela;
-import com.github.britooo.looca.api.core.Looca;
-import services.Autenticacao;
-import services.ServicosLisync;
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
 
+import com.github.britooo.looca.api.core.Looca;
+import com.github.britooo.looca.api.group.janelas.Janela;
+import dao.ComponenteDAO;
 import dao.TelevisaoDAO;
 import dao.UsuarioDAO;
-import models.Componente;
-import models.Televisao;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
 import models.Usuario;
 import services.Autenticacao;
 import services.ServicosLisync;
 
-import dao.ComponenteDAO;
-
 public class Reset {
-
-
-
+    public Reset() {
+    }
 
     public static void main(String[] args) {
-
-
         Scanner input = new Scanner(System.in);
-        Scanner inputNext = new Scanner(System.in);
+        new Scanner(System.in);
         ServicosLisync servicosLisync = new ServicosLisync();
         Looca looca = new Looca();
         Autenticacao autenticacao = new Autenticacao();
         UsuarioDAO usuarioDAO = new UsuarioDAO();
-        TelevisaoDAO televisaoDAO = new TelevisaoDAO();
-        ComponenteDAO componenteDAO = new ComponenteDAO();
-
-
-
-
-        String prosseguir;
+        new TelevisaoDAO();
+        new ComponenteDAO();
         Boolean cadastroValido = false;
         Usuario usuarioAutenticado = null;
 
         do {
-            System.out.println("""
-                    \n|----------- LOGIN -----------|
-                    Insira suas informações
-                    """);
-
-            System.out.println("Digite seu E-mail: ");
+            System.out.println("\n|----------- LOGIN -----------|\nInsira suas informacoes\nDigite 0 para voltar ao MENU\n");
+            System.out.println("Digite seu e-mail: ");
             String email = input.next();
-            if (email.equals("0")) break;
+            if (email.equals("0")) {
+                break;
+            }
 
             System.out.println("Digite sua senha: ");
             String senha = input.next();
-            if (senha.equals("0")) break;
+            if (senha.equals("0")) {
+                break;
+            }
 
             cadastroValido = autenticacao.validacaoLogin(email, senha);
             if (cadastroValido) {
@@ -61,56 +53,58 @@ public class Reset {
             } else {
                 System.out.println("Email ou senha incorretos!");
                 System.out.println("Realizar nova tentativa? (Digite 'N' Para cancelar ou 'S' para prosseguir) ");
-                prosseguir = input.next();
+                String prosseguir = input.next();
                 if (prosseguir.equalsIgnoreCase("N")) {
                     System.out.println("Login encerrado");
                     System.exit(0);
                 }
             }
-        } while (!cadastroValido);
+        } while(!cadastroValido);
 
-        // Atualização dos dados do usuário autenticado;///
         servicosLisync.atualizarUsuario(usuarioAutenticado);
         servicosLisync.atualizarEmpresaDoUsuario(usuarioAutenticado.getFkEmpresa());
         List<Janela> janelas = looca.getGrupoDeJanelas().getJanelas();
+        Iterator var15 = janelas.iterator();
 
-        long pidJanela;
-
-        for (Janela janela : janelas) {
-            System.out.println(janela);
-        }
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Insira o PID da janela que deseja fechar: ");
-        pidJanela = scanner.nextLong();
-        scanner.close();
-
-        fecharJanelaPorPID(pidJanela);
-    }
-
-
-    // Método para fechar uma janela com base no PID fornecido
-    public static void fecharJanelaPorPID(long pid) {
-        Looca looca = new Looca();
-        List<Janela> janelas = looca.getGrupoDeJanelas().getJanelas();
-
-        for (Janela janela : janelas) {
-            if (janela.getPid() == pid) {
-                encerrarProcesso(janela.getPid());
-                return;
+        while(var15.hasNext()) {
+            Janela janela = (Janela)var15.next();
+            if (janela.getTitulo() != null && !janela.getTitulo().isEmpty()) {
+                System.out.println(janela);
             }
         }
 
-        System.out.println("Não foi encontrada uma janela com o PID especificado.");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Insira o PID da janela que deseja fechar: ");
+        long pidJanela = scanner.nextLong();
+        scanner.close();
+        fecharJanelaPorPID(pidJanela);
     }
 
-    // Método privado para encerrar o processo associado ao PID
+    public static void fecharJanelaPorPID(long pid) {
+        Looca looca = new Looca();
+        List<Janela> janelas = looca.getGrupoDeJanelas().getJanelas();
+        Iterator var4 = janelas.iterator();
+
+        Janela janela;
+        do {
+            if (!var4.hasNext()) {
+                System.out.println("Não foi encontrada uma janela com o PID especificado.");
+                return;
+            }
+
+            janela = (Janela)var4.next();
+        } while(janela.getPid() != pid);
+
+        encerrarProcesso(janela.getPid());
+    }
+
     private static void encerrarProcesso(long janelaId) {
         try {
             Runtime.getRuntime().exec("taskkill /IM " + janelaId + " /F");
-            // Runtime.getRuntime().exec("kill " + janelaId);
             System.out.println("Janela fechada com sucesso.");
-        } catch (Exception e) {
-            System.out.println("Erro ao fechar a janela: " + e.getMessage());
+        } catch (Exception var3) {
+            System.out.println("Erro ao fechar a janela: " + var3.getMessage());
         }
+
     }
 }
