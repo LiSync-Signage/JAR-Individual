@@ -2,20 +2,26 @@
 
 # Atualizar a lista de pacotes disponíveis
 echo "Atualizando a lista de pacotes..."
-sudo apt update
+if ! sudo apt update; then
+    echo "Falha ao atualizar a lista de pacotes."
+    exit 1
+fi
 
 # Atualizar os pacotes instalados
 echo "Atualizando os pacotes instalados..."
-sudo apt upgrade -y
+if ! sudo apt upgrade -y; then
+    echo "Falha ao atualizar os pacotes instalados."
+    exit 1
+fi
 
 # Trocar a senha do root
 echo "Trocando a senha do usuário root..."
-echo "root:urubu100" | sudo chpasswd
+echo "root:urubu100" | sudo chpasswd || { echo "Falha ao trocar a senha do root."; exit 1; }
 
 # Trocar a senha do usuário ubuntu
 echo "Trocando a senha do usuário ubuntu..."
 if id "ubuntu" &>/dev/null; then
-    echo "ubuntu:urubu100" | sudo chpasswd
+    echo "ubuntu:urubu100" | sudo chpasswd || { echo "Falha ao trocar a senha do usuário ubuntu."; exit 1; }
     echo "Senha do usuário ubuntu trocada com sucesso."
 else
     echo "Usuário ubuntu não encontrado."
@@ -25,66 +31,65 @@ echo "Atualização e troca de senhas concluídas com sucesso."
 
 # Verifica se o Java está instalado
 echo "Verificando se o Java está instalado..."
-if java -version &>/dev/null; then
-    echo "Java instalado."
-else
-    echo "Java não instalado."
-    echo "Instalando o Java..."
-    sudo apt install openjdk-17-jre -y
-    # Verifica se a instalação foi bem-sucedida
-    if [ $? -eq 0 ]; then
-        echo "Java instalado com sucesso!"
-    else
+if ! java -version &>/dev/null; then
+    echo "Java não instalado. Instalando o Java..."
+    if ! sudo apt install openjdk-17-jre -y; then
         echo "Falha na instalação do Java. Verifique os logs para mais informações."
         exit 1
     fi
+    echo "Java instalado com sucesso!"
+else
+    echo "Java já está instalado."
 fi
 
 # Importa bibliotecas após a instalação do Java
 echo "Importando bibliotecas..."
 cd ~
-git clone https://github.com/LiSync-Signage/JAR-Individual.git
-# Verifica se o clone foi bem-sucedido
-if [ $? -eq 0 ]; then
-    echo "Bibliotecas importadas com sucesso!"
-else
+if ! git clone https://github.com/LiSync-Signage/JAR-Individual.git; then
     echo "Falha ao importar bibliotecas. Verifique os logs para mais informações."
     exit 1
 fi
+echo "Bibliotecas importadas com sucesso!"
 
 # Instalação do Docker e configuração do MySQL
 # Atualizar a lista de pacotes disponíveis
 echo "Atualizando a lista de pacotes novamente..."
-sudo apt update
+if ! sudo apt update; then
+    echo "Falha ao atualizar a lista de pacotes."
+    exit 1
+fi
 
 # Instalar o Docker
 echo "Instalando o Docker..."
-sudo apt install docker.io -y
-if [ $? -ne 0 ]; then
+if ! sudo apt install docker.io -y; then
     echo "Falha na instalação do Docker. Verifique os logs para mais informações."
     exit 1
 fi
 
 # Iniciar o serviço Docker
 echo "Iniciando o serviço Docker..."
-sudo systemctl start docker
+if ! sudo systemctl start docker; then
+    echo "Falha ao iniciar o serviço Docker. Verifique os logs para mais informações."
+    exit 1
+fi
 
 # Habilitar o Docker para iniciar com o sistema operacional
 echo "Habilitando o Docker para iniciar com o sistema operacional..."
-sudo systemctl enable docker
+if ! sudo systemctl enable docker; then
+    echo "Falha ao habilitar o Docker para iniciar com o sistema operacional. Verifique os logs para mais informações."
+    exit 1
+fi
 
 # Fazer pull da imagem do MySQL 5.7 do Docker Hub
 echo "Baixando a imagem do MySQL 5.7..."
-sudo docker pull mysql:5.7
-if [ $? -ne 0 ]; then
+if ! sudo docker pull mysql:5.7; then
     echo "Falha ao baixar a imagem do MySQL. Verifique os logs para mais informações."
     exit 1
 fi
 
 # Criar e iniciar o container MySQL
 echo "Criando e iniciando o container MySQL..."
-sudo docker run -d -p 3306:3306 --name ContainerBD -e MYSQL_DATABASE=lisyncDB -e MYSQL_ROOT_PASSWORD=urubu100 mysql:5.7
-if [ $? -ne 0 ]; then
+if ! sudo docker run -d -p 3306:3306 --name ContainerBD -e MYSQL_DATABASE=lisyncDB -e MYSQL_ROOT_PASSWORD=urubu100 mysql:5.7; then
     echo "Falha ao criar o container MySQL. Verifique os logs para mais informações."
     exit 1
 fi
@@ -102,23 +107,19 @@ if [[ $container_status == Up* ]]; then
 
     # Criar o usuário marcelo e conceder todos os privilégios a ele
     echo "Criando o usuário 'marcelo' e concedendo privilégios..."
-    sudo docker exec -i ContainerBD mysql -u root -purubu100 -e "CREATE USER 'marcelo'@'%' IDENTIFIED BY 'urubu100'; ALTER USER 'marcelo' IDENTIFIED WITH mysql_native_password BY 'urubu100'; GRANT ALL PRIVILEGES ON *.* TO 'marcelo'@'%'; FLUSH PRIVILEGES;"
-    if [ $? -eq 0 ]; then
-        echo "Usuário 'marcelo' criado com sucesso e privilégios concedidos."
-    else
+    if ! sudo docker exec -i ContainerBD mysql -u root -purubu100 -e "CREATE USER 'marcelo'@'%' IDENTIFIED BY 'urubu100'; ALTER USER 'marcelo' IDENTIFIED WITH mysql_native_password BY 'urubu100'; GRANT ALL PRIVILEGES ON *.* TO 'marcelo'@'%'; FLUSH PRIVILEGES;"; then
         echo "Falha ao criar o usuário 'marcelo'. Verifique os logs para mais informações."
         exit 1
     fi
+    echo "Usuário 'marcelo' criado com sucesso e privilégios concedidos."
 
     # Executar o script SQL "lisyncBD"
     echo "Executando o script SQL 'lisyncBD'..."
-    sudo docker exec -i ContainerBD sh -c 'mysql -u root -purubu100 bancoLocal < /home/ubuntu/JAR-Individual/Marcelo/recursos/lisyncDBNew.sql'
-    if [ $? -eq 0 ]; then
-        echo "Script SQL 'lisyncBD' executado com sucesso."
-    else
+    if ! sudo docker exec -i ContainerBD sh -c 'mysql -u root -purubu100 lisyncDB < /home/ubuntu/JAR-Individual/Marcelo/recursos/lisyncDBNew.sql'; then
         echo "Falha ao executar o script SQL. Verifique os logs para mais informações."
         exit 1
     fi
+    echo "Script SQL 'lisyncBD' executado com sucesso."
 else
     echo "A criação do container falhou. Verificando os logs..."
     sudo docker logs ContainerBD
