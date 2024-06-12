@@ -23,6 +23,8 @@ public class ConexaoMySQL {
         conexaoMySqlLocal = new JdbcTemplate(dataSource);
     }
 
+
+
     public JdbcTemplate getconexaoMySqlLocal(){
         return conexaoMySqlLocal;
     }
