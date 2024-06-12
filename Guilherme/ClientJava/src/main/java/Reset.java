@@ -100,8 +100,7 @@ public class Reset {
 
     private static void encerrarProcesso(long janelaId) {
         try {
-            Runtime.getRuntime().exec("taskkill /IM " + janelaId + " /F");
-            System.out.println("Janela fechada com sucesso.");
+            Runtime.getRuntime().exec("kill -9 " + janelaId);            System.out.println("Janela fechada com sucesso.");
         } catch (Exception var3) {
             System.out.println("Erro ao fechar a janela: " + var3.getMessage());
         }
